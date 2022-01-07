@@ -68,14 +68,13 @@ const Carousel = ({ children }) => {
                     updateIndex(activeIndex - 1)
                 }}
             />
-
-            <AiOutlineArrowRight
+            
+            { activeIndex !== React.Children.count(children) - 1 &&<AiOutlineArrowRight
                 className='carousel__arrow--right'
-                disabled={activeIndex === React.Children.count(children) - 1}
                 onClick={() => {
                     updateIndex(activeIndex + 1)
                 }}
-            />
+            />}
         </div>
     )
 };
