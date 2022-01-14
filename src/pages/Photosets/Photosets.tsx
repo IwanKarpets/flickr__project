@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getPhotoSets } from "../../store/actions/action";
-import Header from "../../components/Header";
-import Card from "../../components/Card";
+import Header from "../../components/Header/Header";
+import Card from "../../components/Card/Card";
 import "./Photosets.scss";
-import Loader from "../../components/Loader";
+import Loader from "../../components/Loader/Loader";
 import { useNavigate } from "react-router-dom";
 //import photo from "../../assets/photo.jpg";
 import { useTypedSelector } from "../../hooks/useTypedSelector";

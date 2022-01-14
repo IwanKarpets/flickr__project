@@ -11,7 +11,7 @@ module.exports = {
     publicPath: "/",
   },
   resolve: {
-    extensions: [".js",".jsx", ".ts", ".tsx"]
+    extensions: [".ts", ".tsx", ".js"]
 },
   devServer: {
     port: 3000,
@@ -37,11 +37,6 @@ module.exports = {
         test: /\.(ts|tsx)$/,
         exclude: /node_modules/,
         use: ["ts-loader"],
-    },
-    {
-        test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
-        use: ["babel-loader"],
     },
     ],
   },

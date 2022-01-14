@@ -1,7 +1,7 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import Photosets from "../pages/Photosets";
-import SinglePhotoset from "../pages/SinglePhotoset";
+import Photosets from "../pages/Photosets/Photosets";
+import SinglePhotoset from "../pages/SinglePhotoset/SinglePhotoset";
 
 const App = () => {
   return (
