@@ -1,30 +1,32 @@
-import React, {Dispatch} from "react";
-import "./Header.scss";
-
+import React from 'react';
+import './Header.scss';
 
 interface HeaderProps {
-  handleSort:(e: React.ChangeEvent<HTMLSelectElement>)=>void;
-  handleSearch:(e: React.ChangeEvent<HTMLInputElement>)=>void;
+  handleSort: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+  handleSearch: (e: React.ChangeEvent<HTMLInputElement>) => void;
   value: string;
-  query:string;
+  query: string;
 }
 
-const Header = ({ handleSort, value, handleSearch, query }:HeaderProps) => {
+function Header({
+  handleSort, value, handleSearch, query,
+}: HeaderProps) {
   return (
-    <header>
-      <div className="header">
+    <header className="header">
+      <div className="inner">
         <div className="search">
           <input
             type="text"
             placeholder="Enter photosets"
-            className="input__search"
+            className="search__text"
             value={query}
             onChange={handleSearch}
           />
         </div>
       </div>
-      <div className="header__sort">
+      <div className="sort">
         <select
+          className="sort__element"
           value={value}
           onChange={handleSort}
         >
@@ -34,6 +36,6 @@ const Header = ({ handleSort, value, handleSearch, query }:HeaderProps) => {
       </div>
     </header>
   );
-};
+}
 
 export default Header;

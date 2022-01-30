@@ -1,11 +1,11 @@
-import React from "react";
-import { Routes, Route } from "react-router-dom";
-import Photosets from "../pages/Photosets/Photosets";
-import SinglePhotoset from "../pages/SinglePhotoset/SinglePhotoset";
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import Photosets from '../pages/Photosets/Photosets';
+import SinglePhotoset from '../pages/SinglePhotoset/SinglePhotoset';
 
-const App = () => {
+function App() {
   return (
-    <div>
+    <div className="app">
       <Routes>
         <Route path="/" element={<Photosets />} />
         <Route path="/photo/:id" element={<SinglePhotoset />} />
@@ -13,6 +13,6 @@ const App = () => {
       </Routes>
     </div>
   );
-};
+}
 
 export default App;

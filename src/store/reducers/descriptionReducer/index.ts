@@ -1,11 +1,14 @@
-import {DescriptionState,DescriptionActionTypes, DescriptionAction} from '../../types/description'
+import { DescriptionState, DescriptionActionTypes, DescriptionAction } from '../../types/description';
 
 const defaultState:DescriptionState = {
   description: null,
-  isFetchingDesc:null
+  isFetchingDesc: null,
 };
 
-export default function descriptionReducer(state = defaultState, action:DescriptionAction):DescriptionState {
+export default function descriptionReducer(
+  state = defaultState,
+  action: DescriptionAction
+): DescriptionState {
   switch (action.type) {
     case DescriptionActionTypes.SET_DESCRIPTION:
       return {
@@ -22,4 +25,3 @@ export default function descriptionReducer(state = defaultState, action:Descript
       return state;
   }
 }
-

@@ -1,47 +1,17 @@
-import React, { useState } from "react";
-import { useSwipeable } from "react-swipeable";
-import "./Carousel.scss";
-import { photoStaticURL, cutString } from "../../helpers/helpers";
-import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
-import { v4 as uuidv4 } from 'uuid';
+import React, { useState } from 'react';
+import { useSwipeable } from 'react-swipeable';
+import './Carousel.scss';
+import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai';
 
-interface CarouselItemProps{
-  sliderItem: any[];
-  width: string;
+interface CarouselProps {
   children: JSX.Element | JSX.Element[];
 }
 
-interface CarouselProps{
-  children: JSX.Element | JSX.Element[];
-}
-
-export const CarouselItem = ({ sliderItem, width }:CarouselItemProps) => {
-  return (
-    <div className="carousel__item" style={{ width: width }}>
-      {sliderItem.map((slider) => (
-        <div key={uuidv4()} className="carousel__card">
-          <img
-            className="carousel__image"
-            src={photoStaticURL(
-              slider.farm,
-              slider.server,
-              slider.id,
-              slider.secret
-            )}
-            alt="photo"
-          />
-          <p className="carousel__title">{cutString(slider.title)}</p>
-        </div>
-      ))}
-    </div>
-  );
-};
-
-const Carousel = ({ children }:CarouselProps) => {
+function Carousel({ children }: CarouselProps) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [paused, setPaused] = useState(false);
 
-  const updateIndex = (newIndex:number) => {
+  const updateIndex = (newIndex: number) => {
     if (newIndex < 0) {
       newIndex = React.Children.count(children) - 1;
     } else if (newIndex >= React.Children.count(children)) {
@@ -71,9 +41,7 @@ const Carousel = ({ children }:CarouselProps) => {
         className="carousel__inner"
         style={{ transform: `translateX(-${activeIndex * 100}%)` }}
       >
-        {React.Children.map(children, (child) => {
-          return React.cloneElement(child, { width: "100%" });
-        })}
+        {React.Children.map(children, (child) => React.cloneElement(child, { width: '100%' }))}
         ;
       </div>
       <AiOutlineArrowLeft
@@ -93,6 +61,6 @@ const Carousel = ({ children }:CarouselProps) => {
       )}
     </div>
   );
-};
+}
 
 export default Carousel;
