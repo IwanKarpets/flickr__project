@@ -38,9 +38,9 @@ function SinglePhotoset() {
   const sliderData = chunkArray(photo, 3);
 
   return (
-    <section className="single">
+    <section className="single__section">
       <div className="container">
-        <div className="photoset__info">
+        <div className="photoset">
           <h1 className="photoset__owner">{ownername}</h1>
           <p className="photoset__title">{title}</p>
           <p className="photoset__description">
@@ -58,16 +58,16 @@ function SinglePhotoset() {
           <div className="container__card">
             {photo.map((p) => (
               <Card key={p.id}>
-                <div className="card__single">
+                <div className="single">
                   <div className="single__image">
                     <img
-                      className="image"
+                      className="single__photo"
                       src={photoStaticURL(p.farm, p.server, p.id, p.secret)}
                       alt="pic"
                     />
                   </div>
                   <div className="single__content">
-                    <p className="content__title">{p.title}</p>
+                    <p className="single__title">{p.title}</p>
                   </div>
                 </div>
               </Card>

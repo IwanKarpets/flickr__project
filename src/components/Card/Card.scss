@@ -1,104 +1,84 @@
-.card {
-    position: relative;
-    display: flex;
-    overflow: hidden;
-    padding: 2px;
-    border-radius: 5px;
-    color: black;
-    background-color: #fff;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 
-                0 2px 2px rgba(0, 0, 0, 0.1), 
-                0 4px 4px rgba(0, 0, 0, 0.1), 
-                0 8px 8px rgba(0, 0, 0, 0.1), 
-                0 16px 16px rgba(0, 0, 0, 0.1);
-    transition: transform  .5s ease-out;
-
-        &:hover{
+    .card {
+        position: relative;
+        display: flex;
+        overflow: hidden;
+        padding: 2px;
+        border-radius: 5px;
+        color: black;
+        background-color: #fff;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1), 0 4px 4px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1), 0 16px 16px rgba(0, 0, 0, 0.1);
+        transition: transform .5s ease-out;
+        &:hover {
             transform: scale(1.05);
             cursor: pointer;
         }
-
-      &__image{
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          filter: blur(2px) brightness(0.4) contrast(200%) drop-shadow(16px 16px 20px blue) grayscale(50%) hue-rotate(90deg) invert(75%) opacity(25%);
-          filter: sepia(60%);
-      }
-
-      &__content{
-          position: absolute;
-          text-align: center;
-          top: 50%;
-          font-size: 15px;
-          z-index: 1000;
-          width: 100%;
-          height: 100%;
-          font-weight: 700;
-          text-transform: capitalize;
-          transition: transform .5s ease-out;
-          &:hover{
-              transform: scale(1.1);
-              cursor: pointer;
-          }
-      }
-
-      &__btn{
-        margin-top: 10px;
-        background-color: transparent;
-        color: black;
-        border: 2px solid #e7e7e7;
-        padding: 12px 24px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        margin: 4px 2px;
-        transition-duration: 0.4s;
-        cursor: pointer;
-        border-radius: 5px;
-
-        &:hover{
-            background-color: #e7e7e7;
+        &__image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: blur(2px) brightness(0.4) contrast(200%) drop-shadow(16px 16px 20px blue) grayscale(50%) hue-rotate(90deg) invert(75%) opacity(25%);
+            filter: sepia(60%);
         }
-
-      }
-
-  }
-  
-
-.card__single{
-    padding: 2px;
-    width: 100%;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    .single__image{
-        height: 225px;
-        width: 270px;
+        &__content {
+            position: absolute;
+            text-align: center;
+            top: 50%;
+            font-size: 15px;
+            z-index: 1000;
+            width: 100%;
+            height: 100%;
+            font-weight: 700;
+            text-transform: capitalize;
+            transition: transform .5s ease-out;
+            &:hover {
+                transform: scale(1.1);
+                cursor: pointer;
+            }
+        }
+        &__btn {
+            margin-top: 10px;
+            background-color: transparent;
+            color: black;
+            border: 2px solid #e7e7e7;
+            padding: 12px 24px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+            border-radius: 5px;
+            &:hover {
+                background-color: #e7e7e7;
+            }
+        }
+    }
+    
+    .single {
+        padding: 2px;
+        width: 100%;
+        border-radius: 5px;
         display: flex;
         align-items: center;
         justify-content: center;
-    
-        img{
+        &__image {
+            height: 225px;
+            width: 270px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        &__photo {
             object-fit: cover;
             height: 100%;
             width: 100%;
         }
-      }
-    
-      .single__content{
-        padding: 20px 10px;
-        text-align: center;
-
+        &__content {
+            padding: 20px 10px;
+            text-align: center;
+        }
         &__title {
             font-size: 18px;
         }
-      }
-    
-}
-
-
-  
+    }

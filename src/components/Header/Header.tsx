@@ -12,20 +12,21 @@ function Header({
   handleSort, value, handleSearch, query,
 }: HeaderProps) {
   return (
-    <header>
-      <div className="header">
+    <header className="header">
+      <div className="inner">
         <div className="search">
           <input
             type="text"
             placeholder="Enter photosets"
-            className="input__search"
+            className="search__text"
             value={query}
             onChange={handleSearch}
           />
         </div>
       </div>
-      <div className="header__sort">
+      <div className="sort">
         <select
+          className="sort__element"
           value={value}
           onChange={handleSort}
         >

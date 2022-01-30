@@ -93,7 +93,8 @@ function Photosets() {
               ))}
           </div>
           <button
-            className="btn__load"
+            className="container__btn"
+            type="button"
             onClick={pageHandler}
             disabled={page === pages}
           >

@@ -5,7 +5,7 @@ import SinglePhotoset from '../pages/SinglePhotoset/SinglePhotoset';
 
 function App() {
   return (
-    <div>
+    <div className="app">
       <Routes>
         <Route path="/" element={<Photosets />} />
         <Route path="/photo/:id" element={<SinglePhotoset />} />
