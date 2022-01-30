@@ -9,7 +9,8 @@ import {
 import './SinglePhotoset.scss';
 import Loader from '../../components/Loader/Loader';
 import Card from '../../components/Card/Card';
-import Carousel, { CarouselItem } from '../../components/Carousel/Carousel';
+import Carousel from '../../components/Carousel/Carousel';
+import CarouselItem from '../../components/Carousel/CarouselItem/CarouselItem';
 import { chunkArray, photoStaticURL } from '../../helpers/helpers';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 

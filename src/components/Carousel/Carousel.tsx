@@ -2,38 +2,9 @@ import React, { useState } from 'react';
 import { useSwipeable } from 'react-swipeable';
 import './Carousel.scss';
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai';
-import { v4 as uuidv4 } from 'uuid';
-import { photoStaticURL, cutString } from '../../helpers/helpers';
-
-interface CarouselItemProps {
-  sliderItem: any[];
-  width: string;
-}
 
 interface CarouselProps {
   children: JSX.Element | JSX.Element[];
-}
-
-export function CarouselItem({ sliderItem, width }: CarouselItemProps) {
-  return (
-    <div className="carousel__item" style={{ width }}>
-      {sliderItem.map((slider) => (
-        <div key={uuidv4()} className="carousel__card">
-          <img
-            className="carousel__image"
-            src={photoStaticURL(
-              slider.farm,
-              slider.server,
-              slider.id,
-              slider.secret,
-            )}
-            alt="pic"
-          />
-          <p className="carousel__title">{cutString(slider.title)}</p>
-        </div>
-      ))}
-    </div>
-  );
 }
 
 function Carousel({ children }: CarouselProps) {
