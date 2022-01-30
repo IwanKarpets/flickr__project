@@ -20,7 +20,7 @@ function SinglePhotoset() {
   const dispatch = useDispatch();
   const singlePhotoset = useTypedSelector((state) => state.singlePhotoset);
   const { description, isFetchingDesc } = useTypedSelector(
-    (state) => state.description
+    (state) => state.description,
   );
   const {
     isFetching,

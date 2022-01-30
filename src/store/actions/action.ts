@@ -5,7 +5,8 @@ import {
   DescriptionAction,
   DescriptionActionTypes,
 } from '../types/description';
-import API from '../../utils/API';
+import { apiConstatnts, paramsInterface } from '../../apiTypes';
+import axios from 'axios';
 
 export const getPhotoSets = (page: number) => async (dispatch: Dispatch<SetsAction>) => {
   try {
@@ -13,9 +14,16 @@ export const getPhotoSets = (page: number) => async (dispatch: Dispatch<SetsActi
       type: SetsActionTypes.SET_IS_FETCHING,
       payload: true,
     });
-    const response = await API.get(
-      `?method=flickr.photosets.getList&api_key=f6146b5aea320305af01030c6fc04c59&user_id=48600090482%40N01&page=${page}&per_page=9&format=json&nojsoncallback=1`,
-    );
+    const paramsReq:paramsInterface = {
+      method: 'flickr.photosets.getList',
+      api_key: apiConstatnts.API_KEY,
+      user_id: apiConstatnts.USER_ID,
+      page,
+      per_page: apiConstatnts.PER_PAGE,
+      format: apiConstatnts.FORMAT,
+      nojsoncallback: apiConstatnts.NOJSONCLB,
+    };
+    const response = await axios.get('https://www.flickr.com/services/rest/', { params: paramsReq });
     const { pages, photoset } = response.data.photosets;
     const photosetsData = { pages, photoset };
     dispatch({ type: SetsActionTypes.SET_PHOTOSETS, payload: photosetsData });
@@ -30,9 +38,16 @@ export const getSinglePhotoSets = (id: string | undefined) => async (dispatch: D
       type: SingleActionTypes.SET_PHOTO_IS_FETCHING,
       payload: true,
     });
-    const response = await API.get(
-      `?method=flickr.photosets.getPhotos&api_key=f6146b5aea320305af01030c6fc04c59&photoset_id=${id}&user_id=48600090482%40N01&format=json&nojsoncallback=1`,
-    );
+    const paramsReq:paramsInterface = {
+      method: 'flickr.photosets.getPhotos',
+      api_key: apiConstatnts.API_KEY,
+      user_id: apiConstatnts.USER_ID,
+      photoset_id: id,
+      per_page: apiConstatnts.PER_PAGE,
+      format: apiConstatnts.FORMAT,
+      nojsoncallback: apiConstatnts.NOJSONCLB,
+    };
+    const response = await axios.get('https://www.flickr.com/services/rest/', { params: paramsReq });
     const { ownername, title, photo } = response.data.photoset;
     const singlePhotoset = { ownername, title, photo };
     dispatch({
@@ -50,9 +65,16 @@ export const getDescriptionPhotoSets = (id: string | undefined) => async (dispat
       type: DescriptionActionTypes.SET_DESC_IS_FETCHING,
       payload: true,
     });
-    const response = await API.get(
-      `?method=flickr.photosets.getInfo&api_key=f6146b5aea320305af01030c6fc04c59&photoset_id=${id}&user_id=48600090482%40N01&format=json&nojsoncallback=1`,
-    );
+    const paramsReq: paramsInterface = {
+      method: 'flickr.photosets.getInfo',
+      api_key: apiConstatnts.API_KEY,
+      user_id: apiConstatnts.USER_ID,
+      photoset_id: id,
+      per_page: apiConstatnts.PER_PAGE,
+      format: apiConstatnts.FORMAT,
+      nojsoncallback: apiConstatnts.NOJSONCLB,
+    };
+    const response = await axios.get('https://www.flickr.com/services/rest/', { params: paramsReq });
     const description = response.data.photoset.description._content;
     dispatch({
       type: DescriptionActionTypes.SET_DESCRIPTION,
