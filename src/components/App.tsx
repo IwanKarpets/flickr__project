@@ -1,9 +1,9 @@
-import React from "react";
-import { Routes, Route } from "react-router-dom";
-import Photosets from "../pages/Photosets/Photosets";
-import SinglePhotoset from "../pages/SinglePhotoset/SinglePhotoset";
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import Photosets from '../pages/Photosets/Photosets';
+import SinglePhotoset from '../pages/SinglePhotoset/SinglePhotoset';
 
-const App = () => {
+function App() {
   return (
     <div>
       <Routes>
@@ -13,6 +13,6 @@ const App = () => {
       </Routes>
     </div>
   );
-};
+}
 
 export default App;

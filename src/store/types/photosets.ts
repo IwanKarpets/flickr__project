@@ -10,8 +10,8 @@ export interface payloadSetsInterface {
 }
 
 export enum SetsActionTypes {
-  SET_PHOTOSETS = "SET_PHOTOSETS",
-  SET_IS_FETCHING = "SET_IS_FETCHING",
+  SET_PHOTOSETS = 'SET_PHOTOSETS',
+  SET_IS_FETCHING = 'SET_IS_FETCHING',
 }
 
 interface SetPhotosetsAction {

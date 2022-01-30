@@ -1,12 +1,12 @@
-import React from "react";
-import "./Card.scss";
+import React from 'react';
+import './Card.scss';
 
-interface CardProps{
+interface CardProps {
   children: JSX.Element | JSX.Element[];
 }
 
-const Card = ({ children }:CardProps) => {
+function Card({ children }: CardProps) {
   return <div className="card">{children}</div>;
-};
+}
 
 export default Card;

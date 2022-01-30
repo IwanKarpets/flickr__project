@@ -2,8 +2,7 @@ import {
   SetsState,
   SetsAction,
   SetsActionTypes,
-  payloadSetsInterface,
-} from "../../types/photosets";
+} from '../../types/photosets';
 
 const defaultState: SetsState = {
   sets: [],
@@ -13,7 +12,7 @@ const defaultState: SetsState = {
 
 export default function photosetsReducer(
   state = defaultState,
-  action: SetsAction
+  action: SetsAction,
 ): SetsState {
   switch (action.type) {
     case SetsActionTypes.SET_PHOTOSETS:

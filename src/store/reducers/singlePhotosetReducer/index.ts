@@ -1,15 +1,22 @@
-import {SinglePhotoState, SingleActionTypes, SinglePhotoAction,payloadSinglePhoto} from '../../types/singlePhotosets'
+import {
+  SinglePhotoState,
+  SingleActionTypes,
+  SinglePhotoAction,
+} from '../../types/singlePhotosets';
 
-const defaultState:SinglePhotoState = {
+const defaultState: SinglePhotoState = {
   photos: {
     title: '',
     ownername: '',
-    photo: []
+    photo: [],
   },
   isFetching: true,
 };
 
-export default function singlePhotosetReducer(state = defaultState, action:SinglePhotoAction):SinglePhotoState {
+export default function singlePhotosetReducer(
+  state = defaultState,
+  action: SinglePhotoAction
+): SinglePhotoState {
   switch (action.type) {
     case SingleActionTypes.SET_PHOTO:
       return {
@@ -26,4 +33,3 @@ export default function singlePhotosetReducer(state = defaultState, action:Singl
       return state;
   }
 }
-
